@@ -17,7 +17,7 @@ function logMessage(string $message, string $filePath = '../logg/api_log.txt'): 
 }
 
 // Example Usage
-logMessage("API call to fetch leads succeeded.");
+//logMessage("API call to fetch leads succeeded.");
 
 
 ?>

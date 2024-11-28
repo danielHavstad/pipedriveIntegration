@@ -1,17 +1,18 @@
 <?php
 require 'vendor/autoload.php'; 
 require 'leads.php';
+require 'organizations.php' ;
 
-// Pipedrive API details
-$domain = 'nettbureauasdevelopmentteam'; 
-$apiKey = 'cc8b7ad043662da5fc83b3359789daea6cf21c8a'; 
+// Pipedrive API details nettbureau (closed)
+//$domain = 'nettbureauasdevelopmentteam'; 
+//$apiKey = 'cc8b7ad043662da5fc83b3359789daea6cf21c8a'; 
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
-// pipedrive API
-$domain = 'nettbureauasdevelopmentteam'; 
-$apiKey = 'cc8b7ad043662da5fc83b3359789daea6cf21c8a'; 
+// pipedrive API when using personal account
+$domain = 'api'; 
+$apiKey = '9008c4f52619af686e61587a4a07723736c4730f'; 
 
 // create a client to access API using guzzle
 $client = new Client([
@@ -19,6 +20,7 @@ $client = new Client([
     'timeout'  => 30.0, // timeout in seconds
 ]);
 
+$organizationName = "LoremIpsumOrg";
 
 
 
@@ -26,30 +28,13 @@ $client = new Client([
 
 
 
-
-$leads = fetchLeads($client, $apiKey);
+//$leads = fetchLeads($client, $apiKey);
 $organizations = fetchOrganizations($client, $apiKey);
+printOrganizations($organizations);
 
 //printLeads($leads);
 
-/**
- * Prints the result of fetchOrganizations from the Pipedrive API.
- *
- * @param array $orgs $result from fetchLeads
- * @return void.
- */
-function printOrganizations($orgs)
-    {
-    if ($orgs !== null) {
-        echo "Fetched " . count($orgs) . " organizations:\n";
-        foreach ($orgs as $org) {
-            echo "- " . ($org['name'] ?? 'Untitled') . " (ID: " . ($org['id'] ?? 'Unknown') ." orgid: " . ($org['organization_id'] ?? 'Unknown') .  ")   \n";
-        }
-    } else {
-        echo "No valid organizations found or an error occurred.\n";
-    }
-}
+createOrganization($client,$apiKey, $organizationName);
 
-printOrganizations($organizations)
 
 ?>

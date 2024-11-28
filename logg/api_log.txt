@@ -1,1 +1,39 @@
 [2024-11-27 21:28:20] API call to fetch leads succeeded.
+[2024-11-28 18:39:05] API call to fetch leads succeeded.
+[2024-11-28 18:39:34] API call to fetch leads succeeded.
+[2024-11-28 18:57:50] Request Error: Client error: `GET https://api.pipedrive.com/v1/organizations/search?term=&fields=name&exact_match=true&api_token=9008c4f52619af686e61587a4a07723736c4730f` resulted in a `400 Bad Request` response:
+{"success":false,"error":"ServerError [ERR_INVALID_INPUT]: Invalid input: \"term\" is not allowed to be empty","error_in (truncated...)
+
+
+[2024-11-28 18:57:50] Request Error: Client error: `POST https://api.pipedrive.com/v1/organization` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-28 18:58:55] Request Error: Client error: `POST https://api.pipedrive.com/v1/organization` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-28 19:16:12] Request Error: Client error: `POST https://api.pipedrive.com/v1/organizations` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-28 19:17:01] Request Error: Client error: `POST https://api.pipedrive.com/v1/organizations` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-28 19:17:18] Request Error: Client error: `POST https://api.pipedrive.com/v1/organizations` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-28 19:18:07] An unexpected error occurred: Passing in the "body" request option as an array to send a request is not supported. Please use the "form_params" request option to send a application/x-www-form-urlencoded request, or the "multipart" request option to send a multipart/form-data request.
+
+[2024-11-28 19:20:14] Request Error: Client error: `POST https://api.pipedrive.com/v1/organizations` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-28 19:22:25] An unexpected error occurred: Passing in the "body" request option as an array to send a request is not supported. Please use the "form_params" request option to send a application/x-www-form-urlencoded request, or the "multipart" request option to send a multipart/form-data request.
+
+[2024-11-28 19:22:35] An unexpected error occurred: Passing in the "body" request option as an array to send a request is not supported. Please use the "form_params" request option to send a application/x-www-form-urlencoded request, or the "multipart" request option to send a multipart/form-data request.
+
+[2024-11-28 19:22:59] Organization with nameLoremIpsumOrgcreated succesfully .
+

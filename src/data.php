@@ -1,16 +1,13 @@
 <?php
 
 
-$datafile = '../data/testdata.json';
-
-
 /**
  * Load test data from json file
+ *  * @param string $datafile path to testdata.
  *  * @return array $data
  */
-function loadTestData(): array
+function loadTestData(string $datafile = '../data/testdata.json'): array
 {
-    global $datafile;
     $readJson = file_get_contents( $datafile);
     // Decode the JSON string into a PHP array
     $data = json_decode($readJson, true); // Pass `true` to get an associative array
@@ -18,7 +15,7 @@ function loadTestData(): array
     //print_r($data);
 
 
-    return $parsedData;
+    return $data;
 }
 
 

@@ -1,5 +1,7 @@
 <?php
 require 'vendor/autoload.php'; 
+require_once 'logMessages.php' ;
+
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
