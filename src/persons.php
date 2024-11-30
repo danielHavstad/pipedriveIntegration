@@ -163,7 +163,7 @@ function createPerson(
         echo "Request Error: " . $e->getMessage() . "\n";
         if ($e->hasResponse()) {
             echo "Response Body: " . $e->getResponse()->getBody() . "\n";
-            $error += "Response Body: " . $e->getResponse()->getBody() . "\n";
+            $error .= "Response Body: " . $e->getResponse()->getBody() . "\n";
         }
         logMessage($error);
         return null;

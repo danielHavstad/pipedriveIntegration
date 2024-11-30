@@ -30,6 +30,29 @@ $organizationName = "LoremIpsumOrg";
 
 $testData = loadTestData();
 
+/**
+ * Creates a organization, person, and lead (if not exists) in Pipedrive.
+ *
+ * @param Client $client The Guzzle client.
+ * @param string $apiKey The Pipedrive API key.
+ * @param string $organizationName The name of the organization to make.
+ * @param array $data data in format displayed in the task description pdf.
+ */
+function integrateLeadOnPipedrive(Client $client,string $apiKey, string $organizationName, array $data):void
+{
+    //create organization
+    $createOrgResponse = createOrganization($client,$apiKey, $organizationName);
+    //printing responses so whomever runs this can verify execution, comment out print sentences if youd like.
+    print_r($createOrgResponse);
+    $orgid = $createOrgResponse['id'];
+    //create person connected to organization
+    $createPersonResponse = createPerson($client, $apiKey, $orgid, $data['name'], $data['email'], $data['phone'], $data['contact_type']);
+    print_r($createPersonResponse);
+    $personid = $createPersonResponse['id'];
+    //create lead connected to person and organization
+    $createLeadResponse = createLead($client, $apiKey, $orgid, $personid, $data['housing_type'], $data['property_size'], $data['deal_type']);
+    print_r($createLeadResponse);
+}
 
 
 $leads = fetchLeads($client, $apiKey);
@@ -39,15 +62,8 @@ printOrganizations($organizations);
 printPersons($persons);
 printLeads($leads);
 
-$createOrgResponse = createOrganization($client,$apiKey, $organizationName);
-//print_r($createOrgResponse);
+integrateLeadOnPipedrive($client, $apiKey,$organizationName,$testData);
 
-$orgid = $createOrgResponse['id'];
-//print_r($apiKey);
-$createPersonResponse = createPerson($client, $apiKey, $orgid, $testData['name'], $testData['email'], $testData['phone'], $testData['contact_type']);
 
-$personid = $createPersonResponse['id'];
-//print_r( $createPersonResponse );
-$createLeadResponse = createLead($client, $apiKey, $orgid, $personid, $testData['housing_type'], $testData['property_size'], $testData['deal_type']);
-print_r($createLeadResponse);
+
 ?>

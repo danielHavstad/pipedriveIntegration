@@ -181,10 +181,10 @@ function createLead(
     try {
         // Send POST request to create the lead
         $response = $client->post('leads', [
-            'form_params' => [
+            'json' => [
                 'title' => $leadTitle,
                 'person_id' => $personId,
-                'org_id' => $orgId,
+                'organization_id' => $orgId,
                 '9cbbad3c5d83d6d258ef27db4d3784b5e0d5fd32' => $housingTypeValue, // housing_type custom field
                 '7a275c324d7fbe5ab62c9f05bfbe87dad3acc3ba' => $propertySize, //property_size custom field
                 'cebe4ad7ce36c3508c3722b6e0072c6de5250586' => $dealTypeValue,   // deal_type custom field
@@ -209,7 +209,7 @@ function createLead(
         echo "Request Error: " . $e->getMessage() . "\n";
         if ($e->hasResponse()) {
             echo "Response Body: " . $e->getResponse()->getBody() . "\n";
-            $error += "Response Body: " . $e->getResponse()->getBody() . "\n";
+            $error .= "Response Body: " . $e->getResponse()->getBody() . "\n";
         }
         logMessage($error);
         return null;
