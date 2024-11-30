@@ -1,18 +1,22 @@
 <?php
-require 'vendor/autoload.php'; 
-require 'leads.php';
-require 'organizations.php' ;
+require_once 'vendor/autoload.php'; 
+
+require_once 'leads.php';
+require_once 'organizations.php' ;
+require_once 'persons.php';
+
+require_once 'data.php' ;
 
 // Pipedrive API details nettbureau (closed)
-//$domain = 'nettbureauasdevelopmentteam'; 
-//$apiKey = 'cc8b7ad043662da5fc83b3359789daea6cf21c8a'; 
+$domain = 'nettbureauasdevelopmentteam'; 
+$apiKey = '2dd6f0157e0f6eabcf1de7d287bb20251ee61097'; 
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
 // pipedrive API when using personal account
-$domain = 'api'; 
-$apiKey = '9008c4f52619af686e61587a4a07723736c4730f'; 
+//$domain = 'api'; 
+//$apiKey = '9008c4f52619af686e61587a4a07723736c4730f'; 
 
 // create a client to access API using guzzle
 $client = new Client([
@@ -24,17 +28,26 @@ $organizationName = "LoremIpsumOrg";
 
 
 
+$testData = loadTestData();
 
 
 
-
-//$leads = fetchLeads($client, $apiKey);
+$leads = fetchLeads($client, $apiKey);
 $organizations = fetchOrganizations($client, $apiKey);
+$persons = fetchPersons($client, $apiKey);
 printOrganizations($organizations);
+printPersons($persons);
+printLeads($leads);
 
-//printLeads($leads);
+$createOrgResponse = createOrganization($client,$apiKey, $organizationName);
+//print_r($createOrgResponse);
 
-createOrganization($client,$apiKey, $organizationName);
+$orgid = $createOrgResponse['id'];
+//print_r($apiKey);
+$createPersonResponse = createPerson($client, $apiKey, $orgid, $testData['name'], $testData['email'], $testData['phone'], $testData['contact_type']);
 
-
+$personid = $createPersonResponse['id'];
+//print_r( $createPersonResponse );
+$createLeadResponse = createLead($client, $apiKey, $orgid, $personid, $testData['housing_type'], $testData['property_size'], $testData['deal_type']);
+print_r($createLeadResponse);
 ?>

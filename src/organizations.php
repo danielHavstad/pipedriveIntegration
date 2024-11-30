@@ -1,6 +1,7 @@
 <?php
-require 'vendor/autoload.php'; 
+require_once 'vendor/autoload.php'; 
 require_once 'logMessages.php';
+require_once 'util.php';
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -22,7 +23,7 @@ function fetchOrganizations(Client $client, string $apiKey): ?array
         $data = json_decode($response->getBody(), true);
 
         // Check if the response contains valid data
-        if (isValidOrganizationData($data)) {
+        if (isValidData($data)) {
             return $data['data'];
         }
 
@@ -38,19 +39,10 @@ function fetchOrganizations(Client $client, string $apiKey): ?array
     }
 }
 
-/**
- * Simple general Check for if the response contains valid data.
- *
- * @param mixed $data The API response data.
- * @return bool true if data is valid, false otherwise.
- */
-function isValidOrganizationData($data): bool
-{
-    return isset($data['data']) && is_array($data['data']);
-}
 
 
-/** TODO
+
+/*
  * Use pipedrive search to find organization by name
  *
  * @param Client $client The Guzzle client.
@@ -73,7 +65,7 @@ function isValidOrganizationData($data): bool
 
         $searchData = json_decode($searchResponse->getBody(), true);
 
-        if (isValidOrganizationData($searchData)) {
+        if (isValidData($searchData)) {
             return $searchData['data'];
         }
         return null;
@@ -89,20 +81,20 @@ function isValidOrganizationData($data): bool
 
 }
 
-/** TODO
+/*
  * Creates on organization on Pipedrive using their API.
  *
  * @param Client $client The Guzzle client.
  * @param string $apiKey The Pipedrive API key.
  * @param string $orgName The name of the organization to create
- * @return 
+ * @return array? $orgData data of the newly created or already existing Organization, otherwise null
  */
-function createOrganization(Client $client, string $apiKey, string $orgName)
+function createOrganization(Client $client, string $apiKey, string $orgName): ?array
 {
     $searchResult = findOrganizationByName($client, $apiKey,$orgName);
     if (!empty($searchResult['items'])) {
         echo "Organization already exists.\n";
-        return null;
+        return $searchResult['items'][0]['item'];
     }
 
 
@@ -119,8 +111,9 @@ function createOrganization(Client $client, string $apiKey, string $orgName)
 
         $data = json_decode($response->getBody(), true);
         if ($data['success']) {
-            echo "Organization created successfully.\n";
-            logMessage("Organization with name" . $orgName .  "created succesfully .\n");
+            $orgId = $data['data']['id']; //  Get organization ID of newly created organization
+            echo "Organization created successfully. ID: {$orgId}\n";            
+            logMessage("Organization with name '{$orgName}' and ID {$orgId} created successfully.\n");
 
             return $data['data'];
         }
