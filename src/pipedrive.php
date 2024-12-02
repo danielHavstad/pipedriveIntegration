@@ -24,7 +24,7 @@ $client = new Client([
     'timeout'  => 30.0, // timeout in seconds
 ]);
 
-$organizationName = "LoremIpsumOrg";
+$organizationName = "LoremIpsumInc";
 
 
 
