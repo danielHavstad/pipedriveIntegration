@@ -14,6 +14,8 @@ To run script that will create on pipedrive (if not exists) an organisation, a p
 Execute the following commands in terminal
 -   $php pipedrive.php
 
+# update data in testdata.json to upload more leads
+
 ## Project Structure
 
 - src/ #php source files
