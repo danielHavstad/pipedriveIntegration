@@ -9,7 +9,8 @@ require_once 'data.php' ;
 
 // Pipedrive API details nettbureau
 $domain = 'nettbureauasdevelopmentteam'; 
-$apiKey = '2dd6f0157e0f6eabcf1de7d287bb20251ee61097'; 
+// Write in apiKey here:
+$apiKey = ''; 
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;

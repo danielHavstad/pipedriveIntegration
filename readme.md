@@ -10,6 +10,11 @@ I use guzzle library for api calls.
 Install by running: 
 -   $ composer install 
 
+# IMPORTANT: before running pipedrive.php add the api key to the following variable on line 13 (ca.).
+Will look like this:
+// Write in apiKey here:
+$apiKey = ''; 
+
 To run script that will create on pipedrive (if not exists) an organisation, a person, and a lead connected to person and organisation, based on testdata.json.
 Execute the following commands in terminal
 -   $php pipedrive.php
