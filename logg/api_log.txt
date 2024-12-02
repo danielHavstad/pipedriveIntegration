@@ -37,3 +37,58 @@
 
 [2024-11-28 19:22:59] Organization with nameLoremIpsumOrgcreated succesfully .
 
+[2024-11-29 18:02:39] Organization with name 'LoremIpsumOrg' and ID 141 created successfully.
+
+[2024-11-30 09:20:05] An unexpected error occurred: cURL error 6: Could not resolve host: nettbureauasdevelopmentteam.pipedrive.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://nettbureauasdevelopmentteam.pipedrive.com/v1/organizations?api_token=2dd6f0157e0f6eabcf1de7d287bb20251ee61097
+
+[2024-11-30 09:20:06] An unexpected error occurred: cURL error 7: Failed to connect to nettbureauasdevelopmentteam.pipedrive.com port 443 after 0 ms: Couldn't connect to server (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://nettbureauasdevelopmentteam.pipedrive.com/v1/organizations?api_token=2dd6f0157e0f6eabcf1de7d287bb20251ee61097
+
+[2024-11-30 09:27:44] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 09:28:59] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 09:38:18] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 09:44:02] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 09:47:45] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 09:52:46] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 09:59:07] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 10:03:37] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 10:06:31] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 10:06:56] Request Error: Client error: `GET https://api.pipedrive.com/v1/persons/search?term=Ola%20Nordmann&fields=name&exact_match=true&api_token=your_api_key_here` resulted in a `401 Unauthorized` response:
+{"success":false,"error":"unauthorized access","errorCode":401,"error_info":"Please check developers.pipedrive.com"}
+
+
+[2024-11-30 14:36:19] Request Error: Client error: `POST https://nettbureauasdevelopmentteam.pipedrive.com/v1/leads?api_token=2dd6f0157e0f6eabcf1de7d287bb20251ee61097` resulted in a `400 Bad Request` response:
+{"success":false,"data":null,"additional_data":null,"error":"provided dataset is not valid","error_info":"\"org_id\" is  (truncated...)
+
+Response Body: {"success":false,"data":null,"additional_data":null,"error":"provided dataset is not valid","error_info":"\"org_id\" is not allowed"}
+
+[2024-11-30 14:37:16] Lead with title: Lead-cd434aa7ab58929294bedb61c94a8766dd725aeb8749330b59e7b9166b7a0b04created successfully.
+
+[2024-11-30 15:09:54] Lead with title: Lead-244d460e6da1f908adbb5b9df6c7e6964e46c79d3688fe2a70b77c0e83aebe9fcreated successfully.
+
