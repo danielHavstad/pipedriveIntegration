@@ -7,16 +7,12 @@ require_once 'persons.php';
 
 require_once 'data.php' ;
 
-// Pipedrive API details nettbureau (closed)
+// Pipedrive API details nettbureau
 $domain = 'nettbureauasdevelopmentteam'; 
 $apiKey = '2dd6f0157e0f6eabcf1de7d287bb20251ee61097'; 
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-
-// pipedrive API when using personal account
-//$domain = 'api'; 
-//$apiKey = '9008c4f52619af686e61587a4a07723736c4730f'; 
 
 // create a client to access API using guzzle
 $client = new Client([
