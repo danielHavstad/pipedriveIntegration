@@ -16,7 +16,7 @@ Execute the following commands in terminal
 
 ## Project Structure
 
-- src/ # php source files
+- src/ #php source files
     -   data.php # functions pertaining to retrieving/reformating test data
     -   logMessages.php # function for logging
     -   util.php # misc utility functions
@@ -25,6 +25,9 @@ Execute the following commands in terminal
     -   leads.php # functions for lead api calls
 
     -   pipedrive.php # main entry point, sets up connection client, and completes the task of creating a lead as stated in task description.
+- data/
+    -   test_data.json slightly modified testdata from task description (swapped name)
+- logg/ #log file generates here
 
 ## Future work
 Listing here features i thought of but didnt want to spend time implementing for this limited scope project.
